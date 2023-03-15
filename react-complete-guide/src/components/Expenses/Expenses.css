@@ -1,0 +1,8 @@
+/* https://github.com/academind/react-complete-guide-code/blob/05-rendering-lists-conditional-content/code/06-finished/src/components/Expenses/Expenses.css */
+.expenses {
+  padding: 1rem;
+  background-color: rgb(31, 31, 31);
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 95%;
+}
