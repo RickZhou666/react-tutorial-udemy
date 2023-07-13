@@ -1,3 +1,16 @@
+# Tips
+## 1. how to debug in chrome DevTools
+1. go to sources
+2. command + P to navigate your target file
+3. set breakpoint
+4. debug just like in VSC
+
+## 2. how to change theme to dark
+1. shift + command + P
+2. type `dark`
+
+
+
 # react-tutorial-udemy
 
 [This is the React tutorial](https://pplearn.udemy.com/course/react-the-complete-guide-incl-redux)
