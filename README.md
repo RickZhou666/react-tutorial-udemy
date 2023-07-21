@@ -9,6 +9,12 @@
 1. shift + command + P
 2. type `dark`
 
+## 3. Setup
+```bash
+# setup repository
+$ npm set registry https://npm.<some-repository>.com
+```
+
 
 
 # react-tutorial-udemy
