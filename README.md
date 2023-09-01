@@ -3547,5 +3547,62 @@ function handleFetchMovies() {
 <br><br><br><br><br><br>
 
 # 15. Building Custom React Hooks
+- Rules of Hooks
+    - ![imgs](./imgs/Xnip2023-09-01_19-17-50.jpg)
 
-## 15.1
+- github: https://github.com/academind/react-complete-guide-code/tree/15-building-custom-react-hooks<br>
+
+
+<br><br><br>
+
+## 15.1 what are "Custom Hooks" and Why
+1. what are custom hooks
+  - Outsource stateful logic into re-usable functions, unlink "regular functions", custom hooks can use other react hooks and react state
+
+<br><br><br>
+
+## 15.2 Building a Custom Hook
+```js
+import { useState, useEffect } from 'react'
+
+const useCounter = (forwards = true) => {
+  const [counter, setCounter] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (forwards) {
+        setCounter((prevCounter) => prevCounter + 1)
+      } else {
+        setCounter((prevCounter) => prevCounter - 1)
+      }
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [forwards]) // add forwards as dependency, this it will rerun each time this page executed
+
+  return counter
+}
+
+export default useCounter
+
+// use in ForwardCounter.js
+import Card from './Card'
+import useCounter from '../hooks/use-counters'
+
+const BackwardCounter = () => {
+  const counter = useCounter(false)
+  return <Card>{counter}</Card>
+}
+export default BackwardCounter
+```
+
+<br><br><br>
+
+## 15.3 Custom Hook rules & Practices
+https://academind.com/tutorials/function-bind-event-execution/<br>
+1. build custom http hook
+2. use custom http hook
+3. apply to more components
+
+
+  
