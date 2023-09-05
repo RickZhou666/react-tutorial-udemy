@@ -3604,5 +3604,62 @@ https://academind.com/tutorials/function-bind-event-execution/<br>
 2. use custom http hook
 3. apply to more components
 
+<br><br><br><br><br><br>
 
-  
+# 16. Working with forms & user input
+
+<br><br><br>
+
+## 16.1 what's the complex about forms
+
+1. what's complex about forms
+  - forms and inputs can assume different states
+    1. one or more inputs are invalid
+      - output input-specific error msgs & highlight problematic inputs
+      - ensure form can't be submitted/ saved
+    2. all inputs are valid
+      - allow form to be submitted/ saved
+
+2. when to validate?
+  - when form is submitted
+    1. allows the user to enter a valid value before warning him/ her
+    2. avoid unnecessary warnings but maybe present feedback "too late"
+  - when a input is `losing focus`
+    1. allows the user to enter a valid value before warning him/ her
+    2. very useful for untouched forms
+  - on `every keystroke`
+    1. warns user before he/ she had a chance of entering valid values
+    2. if applied only on invalid inputs, has the potential of providing more direct feedback
+
+
+
+<br><br><br>
+
+## 16.2 Handling inputs & forms with React?
+1. if you need validate input on every keystroke, you better use state as useRef cannot do that
+2. dont submit when there is empty
+3. handling the "was Touched" state
+  - whether it's valid
+  - whether user has change to edit it
+4. losing focus
+  - when click bar and click other place, notify user 'empty is not allowed'
+5. valid on every keystroke
+6. simplification
+7. Managing overall validity
+
+<br><br><br>
+
+## 16.3 Simplification
+
+1. Simplification - useHook()
+- pass this function to `use-input.js`
+  - ![imgs](./imgs/Xnip2023-09-05_11-35-45.jpg)
+- execute the function inside of it by using the enteredValue
+  - ![imgs](./imgs/Xnip2023-09-05_11-36-46.jpg)
+
+2. formik to reduce duplication
+- https://formik.org/
+
+
+3. useReducer()
+
